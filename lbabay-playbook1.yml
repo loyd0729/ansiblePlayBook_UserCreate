@@ -1,0 +1,12 @@
+- hosts: <server-name>
+  become: yes
+  tasks:
+    - name: install tmux
+      yum:
+          name: tmux
+          state: present
+    - name: add user
+      user:
+        name: lbabay
+    - name: Expiring password for user
+      command: passwd -e tfleming
